@@ -1,17 +1,18 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "navbar navbar navbar"
-        "aside article  aside"
-        "footer footer footer"
-    ;
-    justify-content: center;
-    align-content: center;
+    width: 100%;
+    height: 100%;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* grid-template-areas: */
+    /*     "navbar navbar navbar" */
+    /*     "aside article  aside" */
+    /*     "footer footer footer"; */
+    /* justify-content: center; */
+    /* align-content: center; */
 }
 
-h1 {
+.story-headline {
     grid-area: article;
     color: #121212;
     font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
@@ -21,6 +22,8 @@ h1 {
     margin: 0 auto;
     margin-bottom: 10px;
     padding-top: 2em;
+    font-size: 2.2rem;
+    line-height: 3rem;
 }
 
 .navbar {
@@ -36,6 +39,7 @@ h1 {
     height: 50px;
     margin-bottom: 35px;
     background-color: #fff;
+    z-index: 1;
 }
 
 .nav-img {
@@ -46,6 +50,7 @@ h1 {
 
 .nav-button {
     padding-top: 10px;
+    padding-bottom: 10px;
     color: #fff;
     background-color: #567b95;
     border: 1px solid #326891;
@@ -54,12 +59,25 @@ h1 {
     font-weight: 700;
     border-radius: 3px;
     transition: ease 0.6s;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
 }
 
 .nav-button:hover {
     border: 1px solid #326891;
     background-color: #326891;
     cursor: pointer;
+}
+
+.menu-button:hover {
+    border: none;
+    background-color: #f7f7f7;
 }
 
 svg {
@@ -84,15 +102,19 @@ svg {
     border-radius: 100%;
     flex-shrink: 5;
     margin-top: 10px;
+    flex-basis: content;
+    padding: 10px;
+    margin-right: 10px;
 }
 
 .share-item-wa {
     background-image: url(https://www.nytimes.com/vi-assets/static-assets/icon-whatsapp-17x17-000-b100d38495ee541e2e4f30bcaf9bfe0c.svg);
-    width: 25px;
-    height: 25px;
+    height: 37;
+    width: 55;
     background-size: 15px;
     background-repeat: no-repeat;
     background-position: center;
+    flex-basis: 0;
 }
 
 figure img{
@@ -114,12 +136,11 @@ p {
 }
 
 .main-article {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-content: center;
-    justify-content: center;
-    grid-gap: -1px;
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 1fr; */
+    /* align-content: center; */
+    /* justify-content: center; */
 }
 
 a {
@@ -147,4 +168,116 @@ h2 {
 
 aside {
     grid-area: aside;
+}
+
+.content-container {
+    position: relative;
+    right: 60%;
+}
+
+.shell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+.shell p {
+    font-family: nyt-franklin,arial,helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0;
+}
+
+.shell span {
+    font-weight: bold;
+}
+
+.interactive-headline {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    font-style: normal;
+    font-family: nyt-cheltenham,georgia,times new roman,times,serif;
+}
+
+.interactive-credit::before {
+    width: 60px;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin: 0 0 13px;
+    background-color: #000;
+}
+
+.interactive-credit p {
+    font-size: .875rem;
+    line-height: 1.125rem;
+    font-weight: 500;
+    font-style: normal;
+    font-family: nyt-franklin,arial,helvetica,sans-serif;
+}
+
+iframe {
+    width: 600px;
+    height: 357.5px;
+}
+
+.subscribe-footer {
+    width: 600px;
+    max-width: 600px;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin: 0px auto 1em;
+    color: rgb(102, 102, 102);
+}
+
+.article-end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    margin-bottom: 15px;
+}
+
+.article-end button {
+    flex-grow: 3;
+    margin-right: 10px;
+}
+
+.article-end .share-container {
+    flex-grow: 1;
+}
+
+.grey-link {
+    color: #666;
+    white-space: nowrap;
+}
+
+.grey-link:hover {
+    text-decoration: none
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.no-decoration:hover {
+    text-decoration: underline;
+}
+
+footer nav {
+    border-top: 1px solid #ebebeb;
+    width: 77.5%;
+    padding-top: 9px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: nyt-franklin,helvetica,arial,sans-serif;
+}
+
+footer nav a {
+    margin-right: 10px;
 }
